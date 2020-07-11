@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class checkin extends Model
 {
     //
+
+    protected $fillable = [''];
 }
