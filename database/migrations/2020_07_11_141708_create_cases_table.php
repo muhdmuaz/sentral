@@ -15,12 +15,15 @@ class CreateCasesTable extends Migration
     {
         Schema::create('cases', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('visitor_id');
             $table->string('title');
             $table->string('date');
-            $table->multiLineString('remark');
+            $table->string('remark');
             $table->string('status');
-            $table->string('reff_pic');
+            $table->bigInteger('reff_pic');
             $table->timestamps();
+
+            $table->foreign('visitor_id')->references('id')->on('visitors')->onDelete('cascade');
         });
     }
 
