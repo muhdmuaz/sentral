@@ -14,7 +14,13 @@ class ReportController extends Controller
      */
     public function index()
     {
-        return visitor::all();
+       return $this->indexapi();
+    }
+
+    public function indexapi()
+    {
+        $alpha = visitor::all();
+        return $alpha;
     }
 
     /**
